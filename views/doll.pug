@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  - var results = [{type:"Glass", color: "red", price: 140},{type:"rubber", color :"blue", price: 100},{type:"plastic", color: "green", price: 200}]
+   div(class="container-fluid")
+    div(class="row" )
+     each res,index in results
+      div(class="col-sm-4" onclick=`buy(${index})`) name : #{res.type} , color : #{res.color} , price  : #{res.price}
+  
+//-   script.
+   let itemNumber=0                
+        function buy(itemNumber)
+        {
+            //for index in results
+             alert(`you purchased Item ${itemNumber+1}`)
+        }
